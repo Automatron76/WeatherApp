@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png" />
+    <script src="js/bulma.js"></script>
+    <script src="data/weather_data.js"></script>
+    <title>Weather App</title>
+    <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const currentCity ="amsterdam";
+    const currentCityData = weatherData[currentCity + "_daily"]
+    const time = document.getElementById("time");
+    const weatherCode = document.getElementById("weatherCode");
+    const temperature_2m_max = document.getElementById("temperature_2m_max");
+    const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+    const wind_direction_10m_dominant = document.getElementById("wind_direction_10m_dominant");
+    const precipitation_probability_max = document.getElementById("precipitation_probability_max");
+
+    time.innerHTML = currentCityData.daily.time[0];
+    weatherCode.innerHTML = currentCityData.daily.weather_code[0];
+    temperature_2m_max.innerHTML = currentCityData.daily.temperature_2m_max[0];
+    wind_speed_10m_max.innerHTML = currentCityData.daily.wind_speed_10m_max[0];
+    wind_direction_10m_dominant.innerHTML = currentCityData.daily.wind_direction_10m_dominant[0];
+    precipitation_probability_max.innerHTML = currentCityData.daily.precipitation_probability_max[0];
+   });
+    </script>
+</head>
+<body>
+  
+    <nav class="navbar has-background-black">
+       
+          <a href="/index.html">
+            <img  src="/images/logo.png" alt="Logo" style="width: 150px; height: 90px;" />
+          </a>
+          <span class="navbar-burger has-background-black" data-target="navbarMenu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </span>
+        
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end has-background-black">
+              <a class="navbar-item has-text-white" href="/index.html">
+                Home
+              </a>
+              <a class="navbar-item has-text-white" href="/pages/dashboard"> 
+                Dashboard
+              </a>
+              <a class="navbar-item has-text-white" href="/pages/settings">
+                Settings
+              </a>
+            </div>
+          </div>
+    </nav>
+    
+        <div class=" block has-text-centered is-size-1 has-text-warning " >  <!--  focus on city and  --> 
+            <h1 id="cityName">Enter City here</h1>
+        </div>
+            <div class="grid has-text-centered level" > <!-- Focus on one city  --> 
+                <div class="cell has-text-centered level-item" >
+                    <div class="box">
+                    <article class="media">
+                      <div class="level-left">
+                        <figure class="image is-64x64">
+                          <img src="images/sun.png" alt="Image" />
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <div class="content">
+                          <p>
+                            <h1 id="time"> </h1>
+                            <p>Weather code:
+                            <strong id="weatherCode"></strong> </p>
+                            <p>Temperature in °C :
+                           <strong id="temperature_2m_max"></strong></p>
+                           <p>Wind km/h:
+                           <strong id="wind_speed_10m_max"></strong></p>
+                          </p>
+                        </div>
+                        <div class="content">
+                            <p>Wind Direction:
+                              <strong id="wind_direction_10m_dominant"></strong> 
+                            </p>
+                          </div>
+                          <div class="content">
+                            <p> Precipitation probabilty :
+                              <strong id="precipitation_probability_max"></strong>
+                              </p>
+                          </div>
+                      </div>
+                    </article>
+                    </div>
+                </div>
+            </div>
+          
+    <section class="grid has-background-white" style="margin-top:30px;"> <!-- grid with days of the week --> 
+            <div class="cell" >
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-1by1">
+                        <img
+                          src="/images/sun.png"
+                          alt="sun"
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-left">
+                          <figure class="image is-48x48">
+                            <img
+                              src="https://bulma.io/assets/images/placeholders/96x96.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="media-content">
+                          <p class="title is-4">Monday</p>
+                          <p class="subtitle is-6">Insert weather here</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                        iaculis mauris
+                        <br />
+                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell">
+                
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Tuesday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+            <div class="cell">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Wednesday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+            <div class="cell">              
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Thursday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+            <div class="cell">               
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Friday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+            <div class="cell">              
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Saturday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+            <div class="cell" >              
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-2by2">
+                            <img
+                              src="/images/sun.png"
+                              alt="Placeholder image"
+                            />
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img
+                                  src="https://bulma.io/assets/images/placeholders/96x96.png"
+                                  alt="Placeholder image"
+                                />
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">Sunday</p>
+                              <p class="subtitle is-6">Insert weather here</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
+                            iaculis mauris.
+                            <br />
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                
+            </div>
+    </section>
+     
+    <footer class="footer mt-auto">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Weather app</strong> by Giovanni Serra
+    </p>
+  </div>
+</footer>
+   
+</body>
+</html>

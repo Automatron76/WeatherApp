@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png" />
+    <script src="js/bulma.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log("Ready to go!")
+        });
+      </script>
+      
+    <title>Settings</title>
+</head>
+<body>
+    <nav class="navbar has-background-black">
+       
+          <a href="/index.html">
+            <img  src="/images/logo.png" alt="Logo" style="width: 150px; height: 90px;" />
+          </a>
+          <span class="navbar-burger has-background-black" data-target="navbarMenu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </span>
+        
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end has-background-black">
+              <a class="navbar-item has-text-white" href="/index.html">
+                Home
+              </a>
+              <a class="navbar-item has-text-white" href="/pages/dashboard"> 
+                Dashboard
+              </a>
+              <a class="navbar-item has-text-white" href="/pages/settings">
+                Settings
+              </a>
+            </div>
+          </div>
+    </nav>
+    <section class="level columns is-multiline is-centered" >
+    <div class="column level-item mb-10 is-1 has-text-centered">
+    <div class="box  is-size-1 has-text-warning">Favourite cities
+      
+        <div class="buttons level-item are-large ">
+            <button class="button  is-info  is-rounded">Amsterdam</button>
+            <button class="button  is-info  is-rounded is-rounded">Berlin</button>
+            <button class="button  is-info  is-rounded is-rounded">Copenhagen</button>
+            <button class="button  is-info  is-rounded is-rounded">Cork</button>
+            <button class="button  is-info  is-rounded is-rounded">New York</button>
+            <button class="button  is-info  is-rounded is-rounded">Paris</button>
+            <button class="button  is-info  is-rounded is-rounded">San Francisco</button>
+            <button class="button  is-info  is-rounded is-rounded">Tromso</button>
+            <button class="button  is-info  is-rounded is-rounded">Waterford</button>
+          </div>
+    </div>
+    </div>
+  
+    <div class="column level-item mb-10 is-1  level-item mb-10 has-text-centered">
+          <div class="box has-text-centered is-size-1 has-text-warning">Settings
+
+            <div class="buttons level-item are-large ">
+                <button class="button is-info  is-rounded">Temperature</button>
+                <button class="button is-info  is-rounded">Wind speed</button>
+                <button class="button is-info  is-rounded">Precipitation probability</button>
+                <button class="button is-info  is-rounded">Sunrise</button>
+                <button class="button is-info  is-rounded">Sunset</button>
+                <button class="button is-info  is-rounded">Wind Direction</button>
+                <button class="button is-info  is-rounded">Timezone</button>
+                <button class="button is-info  is-rounded">Weather Code</button>
+            </div>
+         </div>
+    </div>
+  </section>
+    <footer class="footer mt-auto">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Weather app</strong> by Giovanni Serra
+    </p>
+  </div>
+</footer>
+    
+</body>
+</html>
