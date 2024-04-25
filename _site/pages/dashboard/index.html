@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png" />
-    <script src="js/bulma.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        console.log("Ready to go!")
-      });
-    </script>
-    
+    <script src="/js/bulma.js"></script>
+    <script src="/js/dashboardBoxes.js"></script>
     <title>Dashboard</title>
 </head>
 <body>
-  
+  <container class=" hero is-fullheight">
     <nav class="navbar has-background-black">
        
           <a href="/index.html">
@@ -46,239 +41,7 @@
         <h1>Today's Weather</h1>
     </div>
 
-            <section class=" has-background-white columns is-multiline" > <!-- main grid --> 
-              <div class="column is-4"> <!--Amsterdam-->
-              <div class="card">   
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Amsterdam</p>
-                      <p class="subtitle is-6">Insert weather here</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris. 
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="column is-4"> <!--Berlin-->    
-            <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img
-                        src="https://bulma.io/assets/images/placeholders/96x96.png"
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">Berlin</p>
-                    <p class="subtitle is-6">Insert weather here</p>
-                  </div>
-                </div>
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                  iaculis mauris. 
-                  
-                </div>
-              </div>
-             </div>
-            </div> 
-            <div class="column is-4"> <!--Copenhagen--> 
-            <div class="card">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img
-                    src="https://bulma.io/assets/images/placeholders/96x96.png"
-                    alt="Placeholder image"
-                  />
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Copenhagen</p>
-                <p class="subtitle is-6">Insert weather here</p>
-              </div>
-            </div>
-            <div class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-              iaculis mauris. 
-              
-            </div>
-          </div>
-               </div>
-            </div>          
-              
-            
-
-            <div class="column is-4">  <!--Cork-->         
-                <div class="card">
-                   
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img
-                              src="https://bulma.io/assets/images/placeholders/96x96.png"
-                              alt="Placeholder image"
-                            />
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">Cork</p>
-                          <p class="subtitle is-6">Insert weather here</p>
-                        </div>
-                      </div>
-                  
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                        iaculis mauris. 
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">  <!--New York-->     
-                <div class="card">
-            
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img
-                              src="https://bulma.io/assets/images/placeholders/96x96.png"
-                              alt="Placeholder image"
-                            />
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">New York</p>
-                          <p class="subtitle is-6">Insert weather here</p>
-                        </div>
-                      </div>
-                  
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                        iaculis mauris. 
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4"> <!--Paris-->
-                <div class="card">
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img
-                              src="https://bulma.io/assets/images/placeholders/96x96.png"
-                              alt="Placeholder image"
-                            />
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">Paris</p>
-                          <p class="subtitle is-6">Insert weather here</p>
-                        </div>
-                      </div>
-                    
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                        iaculis mauris.
-                      </div>
-                    </div>
-                </div>
-            </div>      
-            
-
-            <div class="column is-4"> <!--San Francisco-->
-              <div class="card">
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img
-                            src="https://bulma.io/assets/images/placeholders/96x96.png"
-                            alt="Placeholder image"
-                          />
-                        </figure>
-                      </div>
-                      <div class="media-content">
-                        <p class="title is-4">San Francisco</p>
-                        <p class="subtitle is-6">Insert weather here</p>
-                      </div>
-                    </div>
-                  
-                    <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                      iaculis mauris.
-                    </div>
-                  </div>
-              </div>
-          </div> 
-          <div class="column is-4"> <!--Tromso-->
-            <div class="card">
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img
-                          src="https://bulma.io/assets/images/placeholders/96x96.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Tromso</p>
-                      <p class="subtitle is-6">Insert weather here</p>
-                    </div>
-                  </div>
-                
-                  <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                    iaculis mauris.
-                  </div>
-                </div>
-            </div>
-        </div> 
-        <div class="column is-4"> <!--Waterford-->
-          <div class="card">
-              <div class="card-content">
-                <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img
-                        src="https://bulma.io/assets/images/placeholders/96x96.png"
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <p class="title is-4">Waterford</p>
-                    <p class="subtitle is-6">Insert weather here</p>
-                  </div>
-                </div>
-              
-                <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-                  iaculis mauris.
-                </div>
-              </div>
-          </div>
-      </div> 
+            <section id="cardSection" class=" has-background-white columns is-multiline" > <!-- main grid --> 
             </section>
     <footer class="footer mt-auto">
   <div class="content has-text-centered">
@@ -287,6 +50,6 @@
     </p>
   </div>
 </footer>
-   
+  </container>
 </body>
 </html>
