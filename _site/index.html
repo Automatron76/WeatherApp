@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="js/bulma.js"></script>
-    <script src="js/cards.js"></script>
     <script src="data/weather_data.js"></script>
     <script src="js/focusWeather.js"></script>
+  
+    <script src="js/default.js"></script>
+    <script src="js/cards.js"></script>
+    
+    
     <title>Weather App</title>
   
 </head>
@@ -45,34 +50,35 @@
             <h1 id="cityName">Enter City here</h1>
         </div>
             <div class="grid has-text-centered level" > <!-- Focus on one city  --> 
-                <div class="cell has-text-centered level-item" >
-                    <div class="box">
+                <div class="cell has-text-centered level-item " >
+                    <div class="box ">
                     <article class="media">
-                      <div class="level-left">
+                      <div class="level-item">
                         <figure class="image is-64x64">
-                          <img src="images/sun.png" alt="Image" />
+                          <img id="weatherIcon" src="images/sun.png" alt="Image" />
                         </figure>
                       </div>
                       <div class="media-content">
                         <div class="content">
                           <p>
-                            <h1 id="time"> </h1>
+                            <h1 id="day" ></h1>
+                            <h2 id="time"></h2>
                             <p>Weather code:
                             <strong id="weatherCode"></strong> </p>
-                            <p>Temperature in °C :
-                           <strong id="temperature_2m_max"></strong></p>
-                           <p>Wind km/h:
-                           <strong id="wind_speed_10m_max"></strong></p>
+                            <p>Temperature: :
+                           <strong id="temperature_2m"></strong></p>
+                           <p>Wind:
+                           <strong id="wind_speed_10m"></strong></p>
                           </p>
                         </div>
                         <div class="content">
-                            <p>Wind Direction:
-                              <strong id="wind_direction_10m_dominant"></strong> 
+                            <p>Relative Humidity:
+                              <strong id="relative_humidity_2m"></strong> 
                             </p>
                           </div>
                           <div class="content">
                             <p> Precipitation probabilty :
-                              <strong id="precipitation_probability_max"></strong>
+                              <strong id="precipitation_probability"></strong>
                               </p>
                           </div>
                       </div>
