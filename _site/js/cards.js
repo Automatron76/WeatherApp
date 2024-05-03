@@ -1,20 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const city = urlParams.get("city");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const city = urlParams.get('city');
+  const daysOfWeek = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ]; //array with days of the week
+  const container = document.getElementById("cardContainer"); //select the container under which to build the coulumns of each day
 
-    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; //array with days of the week
-    const container = document.getElementById("cardContainer");  //select the container where to build the coulumns of each day
+  daysOfWeek.forEach((day, index) => {
+    //forEach day of the week,create a constant called card and create a <div> element with a Bulma column component
+    const card = document.createElement("div");
+    card.classList.add("column");
 
-    daysOfWeek.forEach((day, index) => {  //forEach day of the week,create a constant called card and create a <div> element with a Bulma card component
-        const card = document.createElement("div");
-        card.classList.add("column");
-
-        card.innerHTML = `
+    card.innerHTML = `
             <div class="card is-2">
                 <div class="card-image">
                     <figure class="image is-1by1">
-                        <img src="/images/sun.png" alt="sun">
+                        <img  id="weatherIcon" src="/images/sun.png" alt="sun">
                     </figure>
                 </div>
                 <article class="media has-text-centered">
@@ -38,37 +46,37 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
 
-        container.appendChild(card);
+    container.appendChild(card);
 
-       // Populate weather data for the current day onto the card
-        const dayData = weatherData[city.toLowerCase() + "_daily"].daily;   //constant which pulls and holds the data of  these daily objects from weatherData.js //constant which pulls and holds the data of  these daily objects from weatherData.js
-        const unitSymbols = {
-            weather_code:"",
-            temperature_2m_max: "°C",
-            wind_speed_10m_max: "km/h",
-            wind_direction_10m_dominant:"°",
-            precipitation_probability_max: "%",
-            relative_humidity_2m: "%"
-        }
+    // Populate weather data for the current day onto the card
+    const dayData = weatherData[city.toLowerCase() + "_daily"].daily; //constant which pulls and holds the data of  these daily objects from weatherData.js 
+    const unitSymbols = {
+      weather_code: "",
+      temperature_2m_max: "°C",
+      wind_speed_10m_max: "km/h",
+      wind_direction_10m_dominant: "°",
+      precipitation_probability_max: "%",
+      relative_humidity_2m: "%",
+    };
 
-        const elementIds = {   // map each object inside daily with their key:value pair to an id with the same name
-            "weather_code": `weatherCode_${day.toLowerCase()}`,
-            "temperature_2m_max": `temperature_2m_max_${day.toLowerCase()}`,
-            "wind_speed_10m_max": `wind_speed_10m_max_${day.toLowerCase()}`,
-            "wind_direction_10m_dominant": `wind_direction_10m_dominant_${day.toLowerCase()}`,
-            "precipitation_probability_max": `precipitation_probability_max_${day.toLowerCase()}`
-        };
+    const elementIds = {
+      // map each object inside daily with their key:value pair to an id with the same name
+      weather_code: `weatherCode_${day.toLowerCase()}`,
+      temperature_2m_max: `temperature_2m_max_${day.toLowerCase()}`,
+      wind_speed_10m_max: `wind_speed_10m_max_${day.toLowerCase()}`,
+      wind_direction_10m_dominant: `wind_direction_10m_dominant_${day.toLowerCase()}`,
+      precipitation_probability_max: `precipitation_probability_max_${day.toLowerCase()}`,
+    };
 
-      
-                    // Use Object.entries() to get the array of key-value pairs elementIds.
-                    // then use forEach() and loop. For each object in the array take the key, call it propertyName and the value which we will call elementId
-            Object.entries(elementIds).forEach(([propertyName, elementId]) => {
-            const element = document.getElementById(elementId);
-            if (element) {
-             const data = dayData[propertyName][index];
-             const unit = unitSymbols[propertyName];
-                element.textContent = `${data} ${unit}`;
-            }
-            });
+    // Use Object.entries() to get the array of key-value pairs elementIds.
+    // then use forEach() and loop. For each object in the array It iterates over each  key:value pair, and for each iteration, it destructures the array into two variables: propertyName and elementId.
+    Object.entries(elementIds).forEach(([propertyName, elementId]) => {
+      const element = document.getElementById(elementId);  //create a variable called element which retrieves the HTML element corresponding to the ID stored in elementId
+      if (element) {   //if element exists
+        const data = dayData[propertyName][index];  // create a variable called data which retrieves the data corresponding to the current propertyName from the dayData object and as index, use whichever day of the week we are accessing in the previous forEach.
+        const unit = unitSymbols[propertyName];
+        element.textContent = `${data} ${unit}`;
+      }
     });
+  });
 });
