@@ -5,48 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png" />
-    <script src="js/bulma.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          console.log("Ready to go!")
-        });
-      </script>
+    <script src="/js/bulma.js"></script>
+    <script src="/js/settings.js"></script>
       
     <title>Settings</title>
 </head>
 <body>
   <container class=" hero is-fullheight">
     {% include "header.njk" %}
+    
     <section class="level columns is-multiline is-centered" >
     <div class="column level-item mb-10 is-1 has-text-centered">
-    <div class="box  is-size-1 has-text-warning">Favourite cities
+        <div class="box  is-size-1 has-text-warning">Favourite cities
       
-        <div class="buttons level-item are-large ">
-            <button class="button  is-info  is-rounded">Amsterdam</button>
-            <button class="button  is-info  is-rounded">Berlin</button>
-            <button class="button  is-info  is-rounded">Copenhagen</button>
-            <button class="button  is-info  is-rounded">Cork</button>
-            <button class="button  is-info  is-rounded">New York</button>
-            <button class="button  is-info  is-rounded">Paris</button>
-            <button class="button  is-info  is-rounded">San Francisco</button>
-            <button class="button  is-info  is-rounded">Tromso</button>
-            <button class="button  is-info  is-rounded">Waterford</button>
+        <div id ="city-buttons"class="buttons level-item are-large ">
+             <!--Cities are printed here --> 
           </div>
-    </div>
+        </div>
     </div>
   
     <div class="column level-item mb-10 is-1  level-item mb-10 has-text-centered">
           <div class="box has-text-centered is-size-1 has-text-warning">Settings
-
-            <div class="buttons level-item are-large ">
-                <button class="button is-info  is-rounded">Temperature</button>
-                <button class="button is-info  is-rounded">Wind speed</button>
-                <button class="button is-info  is-rounded">Precipitation probability</button>
-                <button class="button is-info  is-rounded">Sunrise</button>
-                <button class="button is-info  is-rounded">Sunset</button>
-                <button class="button is-info  is-rounded">Wind Direction</button>
-                <button class="button is-info  is-rounded">Timezone</button>
-                <button class="button is-info  is-rounded">Weather Code</button>
+           
+            <div  id="weather-buttons" class="buttons level-item are-large ">
+                <!--weather settings are printed here --> 
             </div>
          </div>
     </div>

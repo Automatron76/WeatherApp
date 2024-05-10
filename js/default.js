@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Take the city name from the URL parameters
     cityName = urlParams.get('city');
 
-    // If cityName is null from the url , set a default value to "Amsterdam"
+    // If cityName is null from the url , set a default value to "amsterdam"
     if (!cityName) {
-        cityName = "Amsterdam";
+        cityName = "amsterdam";
 
         // Update the URL parameters with the default city name
         urlParams.set('city', cityName);

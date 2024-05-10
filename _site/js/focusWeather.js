@@ -1,23 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
-
   // Take the city name from the URL parameter
   const urlParams = new URLSearchParams(window.location.search);
-  const cityName = urlParams.get("city");
+  const cityNameLowerCase = urlParams.get("city");
 
-  //constant cityNameElement. Display the city name in the element with id = cityName
-  const cityNameElement = document.getElementById("cityName");
-  //if a cityName exist, display it in the element with id cityName otherwise, display "Enter City here". I used this during testing.
-  if (cityName) {
-    cityNameElement.textContent = cityName;
-  } else {
-    cityNameElement.textContent = "Enter City here";
+  // Function to capitalize the first letter of a string
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  // Capitalize the first letter of the city name for display
+  const cityNameCapitalized = capitalizeFirstLetter(cityNameLowerCase);
+  // Display the capitalized city name 
+  document.getElementById("cityName").textContent = cityNameCapitalized;
 
   //create a variable for each weather data to be displayed in the city focus.
   //currentCityData is a variable that contains the access to weather data object, by passing the cityName variable, this will change based on the city we selected, which in turn will provide the url Params.
 
-  const currentCityData = weatherData[cityName.toLowerCase() + "_hourly"];
+  const currentCityData = weatherData[cityNameLowerCase + "_hourly"];
   const time = document.getElementById("time");
   const weatherCode = document.getElementById("weatherCode");
   const temperature_2m = document.getElementById("temperature_2m");
@@ -43,14 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentIndexDay = now.day();
 
     if (currentCityData) {
-
-        const currentDataIndex = currentIndexDay * 24 + parseInt(currentIndexHour); // to get the correct index of the 160 values during the week, you calculate the following : day of the week * 24 hours + whichever hour is now.
-       
+      const currentDataIndex =
+        currentIndexDay * 24 + parseInt(currentIndexHour); // to get the correct index of the 160 values during the week, you calculate the following : day of the week * 24 hours + whichever hour is now.
 
       day.innerHTML = now.format("dddd"); //display Today's day
       time.innerHTML = `${now.format("HH:mm:ss")}`; //display current hour taken from the web browser
       weatherCode.innerHTML =
-      currentCityData.hourly.weather_code[currentDataIndex]; // dinamically change the index accessed of the data based on which hour of the day we are in. For instance at hour 8, we will access index 8 of weather_data={weatherCode:[8]}
+        currentCityData.hourly.weather_code[currentDataIndex]; // dinamically change the index accessed of the data based on which hour of the day we are in. For instance at hour 8, we will access index 8 of weather_data={weatherCode:[8]}
       temperature_2m.innerHTML = `${currentCityData.hourly.temperature_2m[currentDataIndex]} ${unitSymbols.temperature_2m}`;
       wind_speed_10m.innerHTML = `${currentCityData.hourly.wind_speed_10m[currentDataIndex]} ${unitSymbols.wind_speed_10m}`;
       precipitation_probability.innerHTML = `${currentCityData.hourly.precipitation_probability[currentDataIndex]} ${unitSymbols.precipitation_probability}`;
