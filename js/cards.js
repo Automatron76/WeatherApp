@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="card is-2">
                 <div class="card-image">
                     <figure class="image">
-                    <img src="/images/weather-icons/${iconFilename}" alt="weatherIcon">
+                    <img src="/images/weather-icons/bigger-icons/${iconFilename}" alt="weatherIcon">
                     </figure>
                 </div>
                 <article class="media has-text-centered">

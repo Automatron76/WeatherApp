@@ -5,12 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Define an array of city names
     const cities = ["Amsterdam", "Berlin", "Copenhagen", "Cork", "New York", "Paris", "San Francisco", "Tromso", "Waterford"];
 
-    // Remove spaces from the city name
+   
     
     
+   
+
     // Get the section where the cards will be appended
     const cardSection = document.getElementById("cardSection");
 
+     // Remove spaces from the city name
     // Iterate over the cities array and create a card for each city. I had to remove the space between two words cities because it was causing a bug in the focus card. Instead of pulling weatherData.new_york, it was attempting to access weatherData.new York which would break the function. I used regex https://www.w3schools.com/js/js_regexp.asp
     cities.forEach(city => {
         let cityKey;
@@ -19,13 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             cityKey = city.toLowerCase();
         }
-         
-        dayjs.extend(window.dayjs_plugin_weekday)
-
-        const now = dayjs().weekday(4);
+        
+        
+        const now = dayjs();
         const currentIndexDay = now.day();
-        ;
-
+        
         const dayData = weatherData[cityKey.toLowerCase() + "_daily"].daily;
         const weatherCode = dayData.weather_code[currentIndexDay ]; 
 
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
          
         });
 
-        
+      
     });
+ 
 });
