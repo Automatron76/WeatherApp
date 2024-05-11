@@ -68,7 +68,7 @@ I ran out of time to implement logic to the buttons.
 I only managed to implement local storage, but even if they are clicked, nothing happens.
 
 - 🛠️ Days of the week starts with Sunday  
- According to Day.js docs ( https://day.js.org/docs/en/get-set/day) days of the week start from index 0 as Sunday to Saturday as 6 :" Accepts numbers from 0 (Sunday) to 6 (Saturday)".The cards in my dashboard were displaying icons based on weather code that was a day ahead, because the weather code accessed was being associated with the wrong day. Saturday would provide index 6, Sunday index 0
+ According to Day.js docs ( https://day.js.org/docs/en/get-set/day) days of the week start from index 0 as Sunday to Saturday as 6 :" Accepts numbers from 0 (Sunday) to 6 (Saturday)".The cards in my dashboard were displaying icons that were not corresponding to the weather code in weather_data, because the weather code accessed was being associated with the wrong day. Saturday would provide index 6, Sunday index 0. I could not figure out how to fix this.
 
 dashboard HTML
 
@@ -106,18 +106,5 @@ This ensures that in the dashboard, the icons are displayed following the correc
  - [Storm with heavy rain icon](https://icons8.com/icon/6AAyqKfBlzoB/storm-with-heavy-rain)
  
 
-
-## Code explanation 👨‍💻
-
- 
-
-```bash
-  npm run deploy
-```
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
