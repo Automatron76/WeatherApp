@@ -11,13 +11,23 @@ Read me for the weather app assignment
 - Header with 3 buttons for each available page
 - Main page with a focus card showcasing real-time day of the week along with the hours, minutes and seconds.
 - It also display weather icon dynamically, based on the day of the week and the hour, by fetching the weather code provided inside the _hourly dataset.
+  ![index-page](https://github.com/Automatron76/https---github.com-Automatron76-Weather-weather/assets/58086174/411c5016-1b5c-45ec-b7d8-f1f2743d66f6)
+
+
 -  The focus card showcases dynamically 5 different data points fetched from the _hourly dataset so the values displayed are also based on the day and the hour we are in.
 - Both features have been implemented by using day.js.
 - In the same page, 7 cards are displaying the weather forecast of the next 7 days by fetching data from _daily dataset
+
+  ![index-page2](https://github.com/Automatron76/https---github.com-Automatron76-Weather-weather/assets/58086174/ffdc9911-04c3-44c8-9d71-639e690f9055)
+  
 - Dashboard page showcases 9 cards, one for each city.
 - Cards can be clicked and thanks to url categorization implemented, user will be redirected to the main page and data will be populated in the focus card and the 7 days of the week dynamically.
+  ![dashboard](https://github.com/Automatron76/https---github.com-Automatron76-Weather-weather/assets/58086174/8dde6f8c-7c49-4eff-91e8-a30385b236f2)
+
 - Cards in the Display page showcase weather icon based on the weather code of that day (Sunday has index 0 Saturday 6)
-- Settings page has buttons for all the cities and settings, however they are not working. I ran out of time to implement this feature.
+- Settings page has buttons for all the cities and settings
+  #![settings](https://github.com/Automatron76/https---github.com-Automatron76-Weather-weather/assets/58086174/b1969ed3-c5ff-4245-8703-e6672de055e6)
+
 
 ## Known bugs 🐛
 
@@ -69,27 +79,6 @@ I only managed to implement local storage, but even if they are clicked, nothing
 
 - 🛠️ Days of the week starts with Sunday  
  According to Day.js docs ( https://day.js.org/docs/en/get-set/day) days of the week start from index 0 as Sunday to Saturday as 6 :" Accepts numbers from 0 (Sunday) to 6 (Saturday)".The cards in my dashboard were displaying icons that were not corresponding to the weather code in weather_data, because the weather code accessed was being associated with the wrong day. Saturday would provide index 6, Sunday index 0. I could not figure out how to fix this.
-
-dashboard HTML
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/weekday.js"></script>
-    <script>dayjs.extend(window.dayjs_plugin_weekday)</script>
-```
-
-dashboardBoxes javascript
-```js
-  dayjs.extend(window.dayjs_plugin_weekday)
-
-        const now = dayjs().weekday(4);
-        const currentIndexDay = now.day();
-        ;
-
-        const dayData = weatherData[cityKey.toLowerCase() + "_daily"].daily;
-        const weatherCode = dayData.weather_code[currentIndexDay ]; 
-```
-
-This ensures that in the dashboard, the icons are displayed following the correct weather code from Monday to Sunday. Without this implementation, Sunday will generate index 0 which from my understanding, in the weather code results as a Monday.
 
 ## Acknowledgements 📗
 
